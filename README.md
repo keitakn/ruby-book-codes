@@ -33,3 +33,21 @@ bundle install
 ```text
 BUNDLE_PATH: "vendor/bundle"
 ```
+
+## Rubocopによる静的コード解析
+
+以下のコマンドで実行します。（自動的に修正を適応する）
+
+```bash
+bundle exec rubocop -a
+```
+
+結果のみを確認する時は `-a` オプションを外します。
+
+```bash
+bundle exec rubocop
+```
+
+設定ルールに関しては [rubocop-rails](https://github.com/toshimaru/rubocop-rails) を利用しています。
+
+（参考）[Railsと同じRuboCopの設定が利用できるrubocop-rails gemを作った](http://blog.toshimaru.net/rubocop-rails/)
