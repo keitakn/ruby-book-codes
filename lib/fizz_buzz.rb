@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+# @param n [Number] 数値
+# @return [String]
 def fizz_buzz(n)
   if n % 15 == 0
     "Fizz Buzz"
