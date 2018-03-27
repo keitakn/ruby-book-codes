@@ -13,5 +13,15 @@ end
 # @param hex [String]
 # @return [Array<Number>]
 def to_ints(hex)
-  [0, 0, 0]
+  r = hex[1..2]
+  g = hex[3..4]
+  b = hex[5..6]
+
+  ints = []
+
+  [r, g, b].each do |s|
+    ints << s.hex
+  end
+
+  ints
 end
