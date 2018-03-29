@@ -5,7 +5,7 @@
 # @param [String]
 # @return [Boolean]
 def phone_number?(value)
-  result = value.scan /\d{2,5}-\d{1,4}-\d{4}/
+  result = value.scan /\d{2,5}[-(]\d{1,4}[-)]\d{4}/
 
   if result[0] == value.to_s
     return true
