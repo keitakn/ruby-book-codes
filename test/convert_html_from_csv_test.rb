@@ -60,5 +60,8 @@ gb,ゲームボーイ
     TEXT
 
     assert_equal expected, convert_html_from_csv(html)
+
+    # マッチしない場合は空文字が返ってくる事を確認する
+    assert_equal "", convert_html_from_csv("test")
   end
 end
