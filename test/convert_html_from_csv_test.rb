@@ -22,5 +22,24 @@ gb,ゲームボーイ
     TEXT
 
     assert_equal expected, convert_html_from_csv(html)
+
+    # 表示テキストがないHTML
+    html = <<-TEXT
+    <select name="game_console">
+    <option value="none"></option>
+    <option value="wii_u">Wii U</option>
+    <option value="ps4">プレステ4</option>
+    <option value="gb">ゲームボーイ</option>
+    </select>
+    TEXT
+
+    expected = <<-TEXT
+none
+wii_u,Wii U
+ps4,プレステ4
+gb,ゲームボーイ
+    TEXT
+
+    assert_equal expected, convert_html_from_csv(html)
   end
 end

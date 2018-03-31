@@ -11,6 +11,10 @@ def convert_html_from_csv(html)
 
   option_values.each do |option_value|
     option_value.map do |value|
+      if value == ""
+        break
+      end
+
       tmp_csv += value + ","
     end
 
