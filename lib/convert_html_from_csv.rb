@@ -7,7 +7,7 @@
 def convert_html_from_csv(html)
   tmp_csv = ""
   csv = ""
-  option_values = html.scan /<option value="(\w+)"(?: selected)?>(.*)<\/option>/
+  option_values = html.scan /<option value="(\w+)"(?: selected)?>([^<]*)<\/option>/
 
   option_values.each do |option_value|
     option_value.map do |value|

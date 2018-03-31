@@ -63,5 +63,14 @@ gb,ゲームボーイ
 
     # マッチしない場合は空文字が返ってくる事を確認する
     assert_equal "", convert_html_from_csv("test")
+
+    # 改行なしのHTML
+    html = '<option value="ps4">プレステ4</option><option value="gb">ゲームボーイ</option>'
+    expected = <<-TEXT
+ps4,プレステ4
+gb,ゲームボーイ
+    TEXT
+
+    assert_equal expected, convert_html_from_csv(html)
   end
 end
