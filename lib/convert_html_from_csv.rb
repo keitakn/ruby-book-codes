@@ -7,11 +7,11 @@
 def convert_html_from_csv(html)
   tmp_csv = ""
   csv = ""
-  option_values = html.scan /<option value="([a-z0-9_]+)">(.*)<\/option>/
+  option_values = html.scan /<option value="([a-z0-9_]+)"(?: selected)?>(.*)<\/option>/
 
   option_values.each do |option_value|
     option_value.map do |value|
-      if value == ""
+      if value == "" || nil
         break
       end
 
