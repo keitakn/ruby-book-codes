@@ -16,9 +16,9 @@ class ConvertHtmlFromCsvTest < Minitest::Test
     TEXT
 
     expected = <<-TEXT
-    wii_u,Wii U
-    ps4,プレステ4
-    gb,ゲームボーイ
+wii_u,Wii U
+ps4,プレステ4
+gb,ゲームボーイ
     TEXT
 
     assert_equal expected, convert_html_from_csv(html)
