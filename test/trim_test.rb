@@ -67,6 +67,6 @@ Feb 14 07:36:54 app/web.1:  Started HEAD "/" ...
 Feb 14 07:36:54 app/web.1:  Completed 200 ...
     TEXT
 
-    assert_equal expected, remove_particular_string(heroku_log)
+    assert_equal expected, remove_particular_string(/^.+heroku\/(api|scheduler).+\n/, heroku_log)
   end
 end

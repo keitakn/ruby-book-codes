@@ -10,8 +10,9 @@ end
 
 # 特定の文字列を取り除く
 #
+# @param [Regexp]
 # @param [String]
 # @return [String]
-def remove_particular_string(text)
-  text.gsub(/^.+heroku\/(api|scheduler).+\n/, "")
+def remove_particular_string(regexp, text)
+  text.gsub(regexp, "")
 end
