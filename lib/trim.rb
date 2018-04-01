@@ -13,9 +13,5 @@ end
 # @param [String]
 # @return [String]
 def heroku_log_replace(text)
-  <<-TEXT
-Feb 14 07:36:46 heroku/api:  Starting process ...
-Feb 14 07:36:50 heroku/scheduler.7625:  Starting ...
-Feb 14 07:36:50 heroku/scheduler.7625:  State ...
-  TEXT
+  text.gsub(/^.+heroku\/(api|scheduler).+\n/, "")
 end
