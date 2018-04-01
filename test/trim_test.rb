@@ -42,5 +42,9 @@ class TrimTest < Minitest::Test
     TEXT
 
     assert_equal expected, remove_tab_and_space(text)
+
+    text = "Hello"
+
+    assert_equal text, remove_tab_and_space(text)
   end
 end
