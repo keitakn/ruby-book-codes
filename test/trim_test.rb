@@ -24,5 +24,23 @@ class TrimTest < Minitest::Test
     TEXT
 
     assert_equal expected, remove_tab_and_space(text)
+
+    text = <<-TEXT
+{
+  cat:	'マンチカン',
+  dog:'カニーヘンダックス',
+  rabbit:     'ネザーランドドワーフ'
+}
+    TEXT
+
+    expected = <<-TEXT
+{
+  cat: 'マンチカン',
+  dog: 'カニーヘンダックス',
+  rabbit: 'ネザーランドドワーフ'
+}
+    TEXT
+
+    assert_equal expected, remove_tab_and_space(text)
   end
 end
