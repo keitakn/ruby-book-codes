@@ -35,4 +35,14 @@ type=xml; filename=posts.xml; size=2048;
 
     assert_equal %w(users.zip posts.xml), extract_at_lookbehind(text)
   end
+
+  # extract_at_lookaheadメソッドのテスト
+  def test_extract_at_lookahead
+    text = <<-TEXT
+John:guitar, George:guitar, Paul:bass, Ringo:drum
+Freddie:vocal, Brian:guitar, John:bass, Roger:drum
+    TEXT
+
+    assert_equal %w(Paul John), extract_at_lookahead(text)
+  end
 end
