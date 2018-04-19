@@ -15,5 +15,14 @@ Why on earth would anyone feel sorry for you?
     TEXT
 
     assert_equal 2, full_match_count(text, "ear")
+
+    text = <<-TEXT
+<td>
+<%= link_to I18n.t('.show'), user %>
+<%= link_to t('.edit'), edit_user_path(user) %>
+</td>
+    TEXT
+
+    assert_equal 2, full_match_count(text, "t")
   end
 end
