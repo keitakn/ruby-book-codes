@@ -4,7 +4,7 @@
 # @param text [String]
 # @param search_Word [String]
 # @return [Number]
-def count_full_match_count(text, search_Word)
+def full_match_count(text, search_Word)
   result = text.scan /\b#{search_Word}\b/
 
   result.count
