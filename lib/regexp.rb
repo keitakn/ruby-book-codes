@@ -9,3 +9,12 @@ def full_match_count(text, search_Word)
 
   result.count
 end
+
+# 正規表現の「後読み」を使った抽出メソッド
+# 検証用なので "filename" を抜き出すユースケースのみに対応
+#
+# @param text [String]
+# @return [Array<String>]
+def extract_at_lookbehind(text)
+  text.scan(/(?<=filename=)[^;]+/)
+end

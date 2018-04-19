@@ -25,4 +25,14 @@ Why on earth would anyone feel sorry for you?
 
     assert_equal 2, full_match_count(text, "t")
   end
+
+  # extract_at_lookbehindメソッドのテスト
+  def test_extract_at_lookbehind
+    text = <<-TEXT
+type=zip; filename=users.zip; size=1024;
+type=xml; filename=posts.xml; size=2048;
+    TEXT
+
+    assert_equal %w(users.zip posts.xml), extract_at_lookbehind(text)
+  end
 end
