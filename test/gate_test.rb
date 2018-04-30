@@ -26,4 +26,11 @@ class GateTest < Minitest::Test
     @harajuku.enter(ticket)
     refute @ebisu.exit(ticket)
   end
+
+  # 原宿 → 恵比寿の移動が出来る事（trueが返ってくる）を確認する
+  def test_harajuku_to_ebisu_when_fare_is_enough
+    ticket = Ticket.new(190)
+    @harajuku.enter(ticket)
+    assert @ebisu.exit(ticket)
+  end
 end
