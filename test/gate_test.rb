@@ -6,8 +6,8 @@ require "./lib/ticket"
 
 # 改札機プログラムのテスト
 class GateTest < Minitest::Test
-  # 改札機プログラムのテスト
-  def test_gate
+  # 原宿 → 渋谷の移動が出来る事（trueが返ってくる）を確認する
+  def test_harajuku_to_shibuya
     harajuku = Gate.new(:harajuku)
     shibuya = Gate.new(:shibuya)
 
@@ -16,5 +16,17 @@ class GateTest < Minitest::Test
     harajuku.enter(ticket)
 
     assert shibuya.exit(ticket)
+  end
+
+  # 原宿 → 恵比寿の移動が出来ない事（falseが返ってくる）を確認する
+  def test_harajuku_to_ebisu_when_fare_is_not_enough
+    ticket = Ticket.new(150)
+
+    harajuku = Gate.new(:harajuku)
+    ebisu = Gate.new(:ebisu)
+
+    harajuku.enter(ticket)
+
+    refute ebisu.exit(ticket)
   end
 end
