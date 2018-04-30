@@ -51,3 +51,10 @@ bundle exec rubocop
 設定ルールに関しては [rubocop-rails](https://github.com/toshimaru/rubocop-rails) を利用しています。
 
 （参考）[Railsと同じRuboCopの設定が利用できるrubocop-rails gemを作った](http://blog.toshimaru.net/rubocop-rails/)
+
+## YARD
+
+本プロジェクトではYARD形式でDOCを記載します。
+
+- https://yardoc.org/
+- http://morizyun.github.io/blog/yard-rails-ruby-gem-document-html/
