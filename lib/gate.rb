@@ -25,13 +25,15 @@ class Gate
     fare <= ticket.fare
   end
 
-  # 運賃を計算する
-  #
-  # @param [Ticket]
-  def calc_fare(ticket)
-    from = STATIONS.index(ticket.stamped_at)
-    to = STATIONS.index(@name)
-    distance = to - from
-    FARES[distance - 1]
-  end
+  private
+
+    # 運賃を計算する
+    #
+    # @param [Ticket]
+    def calc_fare(ticket)
+      from = STATIONS.index(ticket.stamped_at)
+      to = STATIONS.index(@name)
+      distance = to - from
+      FARES[distance - 1]
+    end
 end
