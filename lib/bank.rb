@@ -2,6 +2,8 @@
 
 require "./lib/deep_freezable"
 
+# DeepFreezableの動作確認用ダミークラス
+# 国ごとの通貨管理を想定
 class Bank
   extend DeepFreezable
 
