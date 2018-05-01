@@ -15,4 +15,17 @@ class DeepFreezableTest < Minitest::Test
     # 配列の要素がすべてfreezeされているか？
     assert Team::COUNTRIES.all? { |country| country.frozen? }
   end
+
+  # ハッシュが正しく処理されるかテストする
+  def test_deep_freeze_to_hash
+    # 意図したハッシュが設定されているか確認する
+    assert_equal(
+      { "Japan" => "yen", "US" => "dollar", "India" => "rupee" },
+      Bank::CURRENCIES
+    )
+    # ハッシュ自身がfreezeされているか？
+    assert Bank::CURRENCIES.frozen?
+    # ハッシュの要素（キーと値）がすべてfreezeされているか？
+    assert Bank::CURRENCIES.all? { |key, value| key.frozen? && value.frozen? }
+  end
 end
