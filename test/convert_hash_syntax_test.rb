@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require "minitest/autorun"
-require "./lib/convert_hash_systax"
+require "./lib/convert_hash_syntax"
 
 # ハッシュ記法変換のテストクラス
 class ConvertHashSyntaxTest < Minitest::Test
