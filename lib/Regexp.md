@@ -6,6 +6,7 @@
 - convert_html_from_csv.rb
 - trim.rb
 - regexp.rb
+- convert_hash_syntax.rb
 
 testディレクトリ配下にそれぞれに対応したテストコードもあります。
 
