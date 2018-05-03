@@ -50,3 +50,22 @@ a #=> "hello"
 '#043c78'.scan(/\w\w/).tap { |rgb| p rgb }.map(&:hex)
 #=> ["04", "3c", "78"]
 ```
+
+## ログデバッグ
+
+ログに変数の中身を出力する方法です。
+
+下記は `Ruby on Rails` での実行例になります。
+
+```ruby
+class User < ApplicationRecord
+  def facebook_username
+    info = facebook_auth.auth_info.info
+    # ログに変数info,nicknameの値を出力する
+    logger.debug "[DEBUG] info.name : #{info.name}"
+    info.nickname
+  end
+end
+```
+
+このコードは [Ruby本](https://github.com/JunichiIto/ruby-book-codes) で紹介されていたコードです。
