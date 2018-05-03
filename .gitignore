@@ -54,3 +54,6 @@ build-iPhoneSimulator/
 # IDEA settings
 .idea
 ruby-book-codes.iml
+
+# Byebug
+.byebug_history
