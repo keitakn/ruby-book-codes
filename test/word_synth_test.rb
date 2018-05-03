@@ -11,4 +11,11 @@ class WordSynthTest < Minitest::Test
     synth = WordSynth.new
     assert_equal "Ruby is fun!", synth.play("Ruby is fun!")
   end
+
+  # リバース効果を与えて実行するテスト
+  def test_play_with_reverse
+    synth = WordSynth.new
+    synth.add_effect(Effects.reverse)
+    assert_equal "ybuR si !nuf", synth.play("Ruby is fun!")
+  end
 end
