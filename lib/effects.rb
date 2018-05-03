@@ -10,4 +10,13 @@ module Effects
       words.split(" ").map(&:reverse).join(" ")
     end
   end
+
+  # エコー効果を与えるメソッド
+  #
+  # @return [Proc]
+  def self.echo(rate)
+    ->(words) do
+      words.chars.map { |c| c == " " ? c : c * rate }.join
+    end
+  end
 end
