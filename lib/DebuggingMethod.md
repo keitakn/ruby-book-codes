@@ -69,3 +69,29 @@ end
 ```
 
 このコードは [Ruby本](https://github.com/JunichiIto/ruby-book-codes) で紹介されていたコードです。
+
+## Debuggerを使う
+
+まずはDebugger [Byebug](https://github.com/deivid-rodriguez/byebug/) をインストールします。
+
+プロジェクト内にpackageとしてインストールしたいので下記のコマンドを実行します。
+
+```
+bundle add byebug --group "development, test"
+```
+
+以下のコマンドで `byebug` から目的のプログラムを実行します。
+
+```
+bundle exec byebug test/fizz_buzz_test.rb
+```
+
+使い方に関しては [printデバッグにさようなら！Ruby初心者のためのByebugチュートリアル](https://qiita.com/jnchito/items/5aaf323ab4f24b526a61) という記事が分かりやすいです。
+
+## RubyMineのDebuggerを使う
+
+RubyMineを持っていればそれでデバッグするのが一番ラクだったりします。
+
+ローカル上で開発を行っている場合はRubyMineの機能を使えばデバッグに困る事はないでしょう。
+
+リモートデバッグを行う為には設定が必要なので、そのあたりに関しては時間があれば別の記事にまとめます。
