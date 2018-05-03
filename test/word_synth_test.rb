@@ -8,7 +8,7 @@ require "./lib/effects"
 class WordSynthTest < Minitest::Test
   # 効果が何もない時のテスト
   def test_play_without_effects
-    assert WordSynth
-    assert Effects
+    synth = WordSynth.new
+    assert_equal "Ruby is fun!", synth.play("Ruby is fun!")
   end
 end
